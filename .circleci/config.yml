@@ -12,3 +12,13 @@ jobs:
 
     steps:
       - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "cd:39:10:d5:d7:2c:0d:dc:7c:d7:ec:23:46:13:8b:3c"
+            
+      - run:
+          name: "SSH into machine"
+          command: |
+            scp -o StrictHostKeyChecking=no -i ${SSH_key_location} -r ~/amweek_findthefix ${Jumpbox}:~/
+            ssh -o StrictHostKeyChecking=no ${Jumpbox} -i ${SSH_key_location} "./script.sh 1"

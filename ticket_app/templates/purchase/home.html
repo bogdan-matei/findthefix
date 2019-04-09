@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    AMWeek
+{% endblock %}
+
+{% block content %}
+
+    <div class="ticketForm">
+
+        <div class="formHeader">Welcome to AMWeek!</div>
+
+        <span id="infoTicketPurchase">Purchase your tickets below: </span>
+
+        <form method="post" action="{% url "purchase_ticket" %}">
+
+            {% csrf_token %}
+
+            {{ form | crispy }}
+
+            <button type="submit" class="btn btn-success">Buy now</button>
+        </form>
+    </div>
+
+{% endblock %}
