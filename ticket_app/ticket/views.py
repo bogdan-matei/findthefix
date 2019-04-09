@@ -7,7 +7,7 @@ from .mail_service import email_confirmation
 def home(request):
     form = TicketForm()
     response = render(request, 'purchase/home.html', {'form': form})
-    response['Env_VM'] = 'Team1'
+    response['Env_VM'] = 'Team5'
     return response
 
 
@@ -23,11 +23,11 @@ def purchase(request):
     else:
         form = TicketForm()
         response = render(request, 'purchase/home.html', {'form': form})
-    response['Env_VM'] = 'Team1'
+    response['Env_VM'] = 'Team5'
     return response
 
 
 def successful_acquisition(request):
     response = render(request, 'purchase/successful_acquisition.html')
-    response['Env_VM'] = 'Team1'
+    response['Env_VM'] = 'Team5'
     return response
