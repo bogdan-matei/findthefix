@@ -6,9 +6,9 @@ def email_confirmation(request):
     message = "Thank you for purchasing a ticket for our event!"
     from_mail = "amweek@events.com"
     recipient_list = [request.POST["email_address"]]
-    send_mail(subject,
+    print(send_mail(subject,
               message,
               from_mail,
               recipient_list,
-              fail_silently=False)
+              fail_silently=False))
 
