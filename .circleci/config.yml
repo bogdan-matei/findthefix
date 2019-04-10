@@ -20,5 +20,5 @@ jobs:
       - run:
           name: "SSH into machine"
           command: |
-            scp -o StrictHostKeyChecking=no -i ${SSH_key_location} -r ~/amweek_findthefix ${Jumpbox}:~/
-            ssh -o StrictHostKeyChecking=no ${Jumpbox} -i ${SSH_key_location} "./script.sh 4"
+            scp -o StrictHostKeyChecking=no -i /home/jumpbox/amweek -r ~/amweek_findthefix ${Jumpbox}:~/
+            ssh -o StrictHostKeyChecking=no ${Jumpbox} -i /home/jumpbox/amweek "./script.sh 4"
